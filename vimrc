@@ -33,7 +33,7 @@ au BufWinEnter ?* silent! loadview 1
 
 " ==== Colour Scheme ====
 syntax enable
-colo slate
+color elflord
 
 " When shift is held lazily during command options
 cmap W w
