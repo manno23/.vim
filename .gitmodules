@@ -1,0 +1,3 @@
+[submodule "bundle/ropevim"]
+	path = bundle/ropevim
+	url = https://github.com/python-rope/ropevim.git

@@ -1,4 +1,4 @@
-" ==== Pathogen Setup ====
+
 
 " 	Pathogen is a plugin manager for vim
 filetype off
@@ -33,7 +33,7 @@ au BufWinEnter ?* silent! loadview 1
 
 " ==== Colour Scheme ====
 syntax enable
-color elflord
+colorscheme default
 
 " When shift is held lazily during command options
 cmap W w
