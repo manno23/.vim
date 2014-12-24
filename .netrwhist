@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/jm/.vim/bundle/syntastic'
-let g:netrw_dirhist_2='/home/jm/documents'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/jm/code/c/portmidi'
+let g:netrw_dirhist_2='/home/jm/code/c/portmidi/pm_common/CMakeFiles/pmjni.dir'
+let g:netrw_dirhist_3='/home/jm/code/c/portmidi/pm_common/CMakeFiles/pmjni.dir/__'
+let g:netrw_dirhist_4='/home/jm/code/c/portmidi/pm_java/CMakeFiles'
+let g:netrw_dirhist_5='/home/jm/code/python/pyportmidi/osx'
