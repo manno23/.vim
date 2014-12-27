@@ -5,6 +5,8 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vim/vimrc
 
 " ==== Basic Settings ====
 
@@ -15,8 +17,6 @@ set term=builtin_ansi			" allows arrow keys to move in insert mode
 set showmatch 					" Highlights matching brackets in programming languages
 set nohidden
 set mouse=a
-" When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim/vimrc
 
 set nowrap
 set tabstop=4
@@ -55,3 +55,5 @@ let g:pydoc_window_lines=0.5
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
+"Taglist
+nnoremap <leader>g :TlistToggle<CR>
