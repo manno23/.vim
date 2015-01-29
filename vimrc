@@ -16,10 +16,11 @@ set showmatch 					" Highlights matching brackets in programming languages
 set nohidden
 set mouse=a
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source ~/.vim/vimrc
 
 set nowrap
 set tabstop=4
+set ts=4
 set softtabstop=4
 set shiftwidth=4  				
 set autoindent  				
@@ -33,7 +34,7 @@ au BufWinEnter ?* silent! loadview 1
 
 " ==== Colour Scheme ====
 syntax enable
-colorscheme default
+colorscheme peachpuff
 
 " When shift is held lazily during command options
 cmap W w
@@ -51,17 +52,39 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php,ctp set omnifunc=phpcomplete#CompletePHP
 autocmd FileType vim set omnifunc=syntaxcomplete#Complete
 
-"Nerdtree - file explorer
-map <leader>n :NERDTreeToggle<CR>
+"" NERDtree - file explorer
 let NERDTreeShowHidden=1
+set <F2>=[12~
+noremap <F2> :call ToggleSideBarNERDTree()<CR>
 
-"Gundo - revision history, allows to jump to an old save
-map <leader>g :GundoToggle<CR>
+"" Taglist - Show tags in file
+set <F3>=[13~
+noremap <F3> :call ToggleSideBarTagList()<CR>
+
+let g:local_nerd_tree_open=0
+let g:local_tlist_open=0
+
+function! ToggleSideBarNERDTree()
+	if g:local_tlist_open
+		:TlistClose
+		let g:local_tlist_open=0
+	endif
+	:NERDTreeToggle
+	let g:local_nerd_tree_open=1
+endfunction
+function! ToggleSideBarTagList()
+	if g:local_nerd_tree_open
+		:NERDTreeClose
+		let g:local_nerd_tree_open=0
+	endif
+	:TlistToggle
+	let g:local_tlist_open=1
+endfunction
 
 "Supertab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
-"Python - shortcuts, snippet activations for python and also django
+"Python - shortcuts
 map <leader>r :!python %<CR>
 map <leader>e :!python -m unittest discover%<CR> 
 let python_slow_sync=1
